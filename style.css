@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Noto Serif TC", Sans-serif;
+    color: #222;
+    line-height: 1.4;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 1.9rem;
+    position: relative;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+p {
+    // font-size:1.5rem;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.line {
+    margin-bottom: 2rem;
+}
+
+.line:after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 5rem;
+    height: 1px;
+    background: #da2;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-container {
+    height: 100vh;
+}
+
+body {
+    background: #fff;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+section.main {
+    margin: 0 0 0 0;
+}
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    z-index: 10;
+}
+
+.navbar {
+    opacity: .5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background: #f9f9f9; */
+    /* background: linear-gradient(to right, #222, #333); */
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .4);
+    height: 50px;
+    z-index: 100;
+    /* color: #fff; */
+}
+
+.navbar > ul {
+    list-style: none;
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+}
+
+.navbar > ul > li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.container {
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.light-background {
+    background: #f9f9f9;
+}
+
+.feature-wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100px auto 300px 100px;
+    grid-template-rows: .4fr .5fr 1fr;
+    grid-template-areas: ". image . ." ". image title ." ". image text ."; 
+}
+
+.feature-title-wrapper {
+    grid-area: title;
+    position: relative;
+    text-align: center;
+}
+
+.feature-title {
+    z-index: 100;
+    position: relative;
+    height:200px;
+}
+
+.feature-title h3 {
+    color: darkred;
+    position: absolute;
+    right:0;
+    font-family: 'Allerta Stencil', sans-serif;
+    white-space: nowrap;
+    font-size: 9rem;
+    font-weight: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.feature-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.feature-image-wrapper {
+     grid-area: image;
+     overflow: hidden;
+}
+
+.feature-text {
+    padding:0 3rem 0 3rem;
+    font-size: .8rem;
+    text-align: justify;
+    grid-area: text;
+}
+
+.feature-text .first-letter {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 1rem;
+    padding: 0 1rem 0.3em 0;
+    display: inline-block;
+    float: left;
+    padding-top: 0.6rem;
+}
+
+.feature-image {
+    background-size: cover;
+    height: 100vh;
+    transition: transform 10s;
+}
+
+.feature-image-wrapper:hover .feature-image {
+    transform: scale(1.05);
+}
+
+.background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    opacity: 0;
+    position: relative;
+    width: 50%;
+    padding: 80px;
+    box-shadow: 0 20px 20px -10px rgba(0, 0, 0, .3);
+    border: 3px solid #da2;
+    border-left: none;
+    border-right: none;
+}
+
+.box:after {
+    position: absolute;
+    content: '-';
+    font-family: sans-serif;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    top: -18px;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    background: #000;
+}
+
+.animation {
+    visibility: hidden;
+}
+
+.box_white {
+    background: #eee;
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+.test-object {
+    width:200px;
+    height:200px;
+    background: orange;
+    visibility: hidden;
+}
+
+.fly-right {
+    animation: fly-right-animation 1s cubic-bezier(0.000, 0.980, 0.550, 0.995 ) forwards;
+}
+
+.fly-top {
+    animation: fly-top-animation 1s cubic-bezier(0.000, 0.980, 0.550, 0.995 ) forwards;
+}
+
+.fade-in {
+    animation: fade-in-animation 2s ease-in-out forwards;
+}
+
+@keyframes fade-in-animation {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fly-right-animation {
+    0% {
+        visibility: visible;
+        transform: translateX(1000px);
+    }
+    100% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fly-top-animation {
+    0% {
+        visibility: visible;
+        transform: translateY(-100vh);
+    }
+    100% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
